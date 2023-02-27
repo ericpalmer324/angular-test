@@ -1,19 +1,27 @@
 <div class="container">
-    <div>
-        <div class="form-control">
-          <label for="text">Balance: ${{balance}}</label>
-        </div>
-        <div class="form-control">
-          <label for="text">Amount:</label>
-          <input
-            type="text"
-            [(ngModel)]="amount"
-            name="amount"
-            id="amount"
-            placeholder="Type Amount here"
-          />
-        </div>
-        <app-button color="black" text="Deposit" (btnClick)="onDepositClick('Deposit')"></app-button>
-        <app-button color="black" text="Withdraw" (btnClick)="onWithdrawClick('Withdraw')"></app-button>
-      </div>
+  <div>
+    <div class="form-control">
+      <label for="text">Balance: ${{ balance }}</label>
+    </div>
+    <div class="form-control">
+      <label for="text">Amount:</label>
+      <input
+        type="number"
+        [(ngModel)]="amount"
+        name="amount"
+        id="amount"
+        placeholder="Type Amount here"
+      />
+    </div>
+    <app-button
+      color="black"
+      text="Deposit"
+      (btnClick)="onDepositClick('Deposit')"
+    ></app-button>
+    <app-button
+      color="black"
+      text="Withdraw"
+      (btnClick)="onWithdrawClick('Withdraw')"
+    ></app-button>
+  </div>
 </div>
