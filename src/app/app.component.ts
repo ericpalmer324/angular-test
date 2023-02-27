@@ -9,12 +9,5 @@ import { TransactionService } from './services/transaction.service';
 })
 export class AppComponent {
   constructor(private TransactionService: TransactionService) {}
-
-  
   transaction: Transaction[] = [];
-
-  ngOnInit(): void {
-    this.TransactionService.getAmount().subscribe((transaction) => (this.transaction = transaction));
-  }
-
-}
+ }

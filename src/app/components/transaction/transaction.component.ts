@@ -46,6 +46,10 @@ export class TransactionComponent implements OnInit {
     
   }
   onWithdrawClick(type: string) {
+    if(this.histories[this.histories.length-1].balance - Number(this.amount) < 0) {
+      alert("Insufficient Money! Please Charge Money!")
+      return;
+    }
 
     this.transaction = {
       amount: this.amount,
@@ -53,10 +57,7 @@ export class TransactionComponent implements OnInit {
       type: type,
       balance: this.histories[this.histories.length-1].balance - Number(this.amount),
     }
-    if(this.balance < 0) {
-      alert("Insufficient Money! Please Charge Money!")
-      return;
-    }
+    
     this.transactionService.withdrawBalance(this.transaction).subscribe(
       (transaction) =>  {
         alert("Withdraw is success!");
