@@ -1,0 +1,19 @@
+<table class="table">
+    <thead>
+      <tr>
+        <th scope="col">Date</th>
+        <th scope="col">Type</th>
+        <th scope="col">Amount</th>
+        <th scope="col">Balance</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let history of histories">
+        <td>{{ history.date }}</td>
+        <td>{{ history.type }}</td>
+        <td>{{ history.amount }}</td>
+        <td>{{ history.balance }}</td>
+      </tr>
+    </tbody>
+  </table>
+  
